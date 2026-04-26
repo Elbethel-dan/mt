@@ -1,0 +1,64 @@
+# OpenNMT-py config for English -> Amharic (MANUAL BPE VERSION)
+
+data:
+  train:
+    path_src: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/train.bpe.en
+    path_tgt: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/train.bpe.am
+
+  valid:
+    path_src: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/dev.bpe.en
+    path_tgt: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/dev.bpe.am
+
+
+# -----------------------------
+# Vocabulary
+# -----------------------------
+src_vocab: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/vocab.en
+tgt_vocab: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/vocab.am
+
+src_vocab_size: 24000
+tgt_vocab_size: 24000
+share_vocab: false
+
+
+# -----------------------------
+# Model (matches paper)
+# -----------------------------
+model_task: seq2seq
+encoder_type: rnn
+decoder_type: rnn
+rnn_type: LSTM
+global_attention: general
+
+hidden_size: 512
+layers: 6
+word_vec_size: 512
+
+
+# -----------------------------
+# Training (FIXED)
+# -----------------------------
+train_steps: 25000
+save_checkpoint_steps: 4000
+valid_steps: 2000
+early_stopping: 5
+
+
+# IMPORTANT: match paper (token-based batching)
+batch_type: tokens
+batch_size: 4096
+accum_count: 1
+
+normalization: tokens
+label_smoothing: 0.1
+
+optim: adam
+learning_rate: 0.0005
+dropout: 0.3
+max_grad_norm: 5
+seed: 42
+
+# -----------------------------
+# Inference
+# -----------------------------
+beam_size: 5

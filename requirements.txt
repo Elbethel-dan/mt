@@ -1,0 +1,21 @@
+# Core preprocessing & utilities
+sacremoses>=0.0.53
+regex>=2023.0.0
+tqdm>=4.65.0
+
+# BPE subword tokenization
+subword-nmt>=0.3.7
+
+# Evaluation metrics
+sacrebleu>=2.3.0
+
+# Machine Translation
+torch>=1.9.0
+OpenNMT-py>=2.2.0  # Specify version for stability
+
+# Visualization (optional)
+tensorboard>=2.10.0
+matplotlib>=3.5.0
+
+# For macOS compatibility (critical!)
+pyonmttok>=1.25.0  # This solves the library issue
