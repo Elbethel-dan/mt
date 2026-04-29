@@ -2,19 +2,19 @@
 
 data:
   train:
-    path_src: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/train.bpe.en
-    path_tgt: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/train.bpe.am
+    path_src: /kaggle/working/mt/train.bpe.en
+    path_tgt: /kaggle/working/mt/train.bpe.am
 
   valid:
-    path_src: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/dev.bpe.en
-    path_tgt: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/dev.bpe.am
+    path_src: /kaggle/working/mt/dev.bpe.en
+    path_tgt: /kaggle/working/mt/dev.bpe.am
 
 
 # -----------------------------
 # Vocabulary
 # -----------------------------
-src_vocab: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/vocab.en
-tgt_vocab: /Users/elbethelzewdie/Downloads/Telegram Lite/el-workspace_new/el-workspace/data/split/vocab.am
+src_vocab: /kaggle/working/mt/vocab.en
+tgt_vocab: /kaggle/working/mt/vocab.am
 
 src_vocab_size: 24000
 tgt_vocab_size: 24000
