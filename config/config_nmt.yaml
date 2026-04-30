@@ -9,42 +9,31 @@ data:
     path_src: /kaggle/working/mt/dev.bpe.en
     path_tgt: /kaggle/working/mt/dev.bpe.am
 
-
-# -----------------------------
-# Vocabulary
-# -----------------------------
-src_vocab: /kaggle/working/mt/vocab.en
-tgt_vocab: /kaggle/working/mt/vocab.am
-
-src_vocab_size: 24000
-tgt_vocab_size: 24000
-share_vocab: false
-
-
 # -----------------------------
 # Model (matches paper)
 # -----------------------------
-model_task: seq2seq
 encoder_type: rnn
 decoder_type: rnn
 rnn_type: LSTM
-global_attention: general
+
+enc_layers: 6
+dec_layers: 6
 
 hidden_size: 512
-layers: 6
 word_vec_size: 512
+global_attention: general
 
 
 # -----------------------------
 # Training (FIXED)
 # -----------------------------
+# -----------------------------
+# Training (paper exact)
+# -----------------------------
 train_steps: 25000
 save_checkpoint_steps: 4000
-valid_steps: 2000
-early_stopping: 5
+valid_steps: 1000
 
-
-# IMPORTANT: match paper (token-based batching)
 batch_type: tokens
 batch_size: 4096
 accum_count: 1
@@ -57,6 +46,12 @@ learning_rate: 0.0005
 dropout: 0.3
 max_grad_norm: 5
 seed: 42
+
+# -----------------------------
+# IMPORTANT FIX
+# -----------------------------
+copy_attn: true
+
 
 # -----------------------------
 # Inference
