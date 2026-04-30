@@ -9,6 +9,16 @@ data:
     path_src: /kaggle/working/mt/dev.bpe.en
     path_tgt: /kaggle/working/mt/dev.bpe.am
 
+
+# -----------------------------
+# Vocab building
+# -----------------------------
+save_data: /kaggle/working/mt/data
+
+src_vocab: /kaggle/working/mt/data.vocab.src
+tgt_vocab: /kaggle/working/mt/data.vocab.tgt
+
+
 # -----------------------------
 # Model (matches paper)
 # -----------------------------
